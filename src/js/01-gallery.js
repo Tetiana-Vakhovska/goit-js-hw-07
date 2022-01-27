@@ -1,34 +1,21 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
+console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
-const cardsMarkup = createColorCardsMarkup;
-paletteConteiner.insertAdjacentHTML(`beforeend`, cardsMarkup);
-paletteConteiner.addEventListener(`click`, onPaletteContainerClick);
-function createColorCardsMarkup(color) {
-    return colors
-        .map(({ hex, rgb }) => {
-            return `<div class="color-card">
-    <div> <div><div><div class ="color-swatch"
-    data-hex="${hex}>"
-   data-rgb="${rgb}>"
-   style="background-color:${hex}">
-   </div> </div> </div> </div>
-   <div class"color-meta">
-   <p> HEX:${hex}</p>
-    <p> RGB:${rgb}</p>
-     </div> </div>
-   `;
-        })
-        .join(``);
-}
+const cardsMarkup = cardListItem(`./gallery-items.js`);
+listItem.insertAdjacentHTML(`beforeend`, cardsMarkup);
+listItem.addEventListener(`click`, onPaletteContainerClick);
+
 
 
   
 
-const cardListItem = ({ src, alt }) => {
+const cardListItem = ({ original, preview, description }) => {
     return `<div class="gallery__item">
-  <a class="gallery__link" href="large-image.jpg">
+  <a class="gallery__link" href="${original}">
         <img
+        src="${ preview}",
+          alt="${description}",
           class="gallery__image"
       src="small-image.jpg"
       data-source="large-image.jpg"
