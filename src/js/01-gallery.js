@@ -1,6 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const paletteConteiner = document.querySelector(`#`);
+const paletteConteiner = document.querySelector(`#gallery`);
 const cardsMarkup = createColorCardsMarkup;
 paletteConteiner.insertAdjacentHTML(`beforeend`, cardsMarkup);
 paletteConteiner.addEventListener(`click`, onPaletteContainerClick);
