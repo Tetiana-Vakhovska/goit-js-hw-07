@@ -1,6 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-const paletteConteiner = document.querySelector(`#gallery`);
+const listItem = document.querySelector(".gallery");
 const cardsMarkup = createColorCardsMarkup;
 paletteConteiner.insertAdjacentHTML(`beforeend`, cardsMarkup);
 paletteConteiner.addEventListener(`click`, onPaletteContainerClick);
@@ -21,6 +21,26 @@ function createColorCardsMarkup(color) {
         })
         .join(``);
 }
+
+
+  
+
+const cardListItem = ({ src, alt }) => {
+    return `<div class="gallery__item">
+  <a class="gallery__link" href="large-image.jpg">
+        <img
+          class="gallery__image"
+      src="small-image.jpg"
+      data-source="large-image.jpg"
+      alt="Image description"
+        />
+        </a>
+</div>`;
+};
+const cardListItemNew = images.map(cardListItem).join("");
+
+listItem.insertAdjacentHTML("beforeend", cardListItemNew);
+console.log(cardListItemNew);
 function onPaletteContainerClick(evt) {
     const isColorSwatchEl = evt.target.classList.contains(`.color-swatch`);
     if (!isColorSwatchEl) { return; }
