@@ -19,16 +19,14 @@ const cardListItem = ({ original, preview, description }) => {
 };
 const cardListItemNew = galleryItems.map(cardListItem).join("");
 const cardsMarkup = cardListItem (galleryItems);
-listItem.insertAdjacentHTML(`beforeend`, cardsMarkup);
+
 listItem.addEventListener(`click`, onPaletteContainerClick);
-
-
-
-  
-
 
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew);
+  
+
+
 function onPaletteContainerClick(evt) {
     const isColorSwatchEl = evt.target.classList.contains(`.color-swatch`);
     if (!isColorSwatchEl) { return; }
