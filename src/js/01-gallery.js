@@ -2,13 +2,6 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
-const cardsMarkup = cardListItem(`./gallery-items.js`);
-listItem.insertAdjacentHTML(`beforeend`, cardsMarkup);
-listItem.addEventListener(`click`, onPaletteContainerClick);
-
-
-
-  
 
 const cardListItem = ({ original, preview, description }) => {
     return `<div class="gallery__item">
@@ -24,7 +17,15 @@ const cardListItem = ({ original, preview, description }) => {
         </a>
 </div>`;
 };
-const cardListItemNew = images.map(cardListItem).join("");
+const cardListItemNew = galleryItems.map(cardListItem).join("");
+const cardsMarkup = cardListItem (galleryItems);
+listItem.insertAdjacentHTML(`beforeend`, cardsMarkup);
+listItem.addEventListener(`click`, onPaletteContainerClick);
+
+
+
+  
+
 
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew);
