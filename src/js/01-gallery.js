@@ -29,14 +29,21 @@ console.log(cardListItemNew);
 
 function onPaletteContainerClick(evt) {
     const isColorSwatchEl = evt.target.classList.contains(`.color-swatch`);
-    if (!isColorSwatchEl) { return; }
-    const currentActiveCard = document.querySelector(`.color-card.is-active`);
-    if (currentActiveCard) {
-        currentActiveCard.classList.remove(`is-active`);
-    }
+   
+  removeActiveClass();
     const swathcEl = evt.target;
     const parentColorCard = swathcEl.closest(`.color-card`);
-    parentColorCard.classList.add(`is-active`);
+ 
+  addActiveCardClass(parentColorCard);
     document.body.style.backgroundColor = swathcEl.dataset.hex;
-        }
+}
+function removeActiveClass() {
+   const currentActiveCard = document.querySelector(`.color-card.is-active`);
+    if (currentActiveCard) {
+        currentActiveCard.classList.remove(`.is-active`);
+    }
+}
+function addActiveCardClass(card) {
+  card.classList.add(`.is-active`);
+}
 console.log(galleryItems);
