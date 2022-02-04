@@ -2,7 +2,6 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
-
 const cardListItem = ({ original, preview, description }) => {
     return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
@@ -15,39 +14,21 @@ const cardListItem = ({ original, preview, description }) => {
       alt="Image description"
         />
         </a>
-</div>`;
-};
+</div>`;};
 const cardListItemNew = galleryItems.map(cardListItem).join("");
 const cardsMarkup = cardListItem (galleryItems);
-
 listItem.addEventListener(`click`, onPaletteContainerClick);
-
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
-console.log(cardListItemNew);
-  
-
-
+console.log(cardListItemNew); 
 function onPaletteContainerClick(evt) {
-    const isColorSwatchEl = evt.target.classList.contains(`.color-swatch`);
-   
-  removeActiveClass();
-    const swathcEl = evt.target;
-    const parentColorCard = swathcEl.closest(`.color-card`);
- 
-  addActiveCardClass(parentColorCard);
-    document.body.style.backgroundColor = swathcEl.dataset.hex;
-}
-function removeActiveClass() {
-   const currentActiveCard = document.querySelector(`.color-card.is-active`);
-  if (currentActiveCard) {
-    currentActiveCard.classList.remove(`.is-active`);
+  evt.preventDefaul();
+  for (let i = 0; i < galleryItems.length; i++) { }
+  if (evt.target.dataset.sourge === galleryItems[i].original) {
+    const modal = basicLightbox.create(`<img src='${galleryItems[i].original}' alt='${galleryItems[i].description}'/>`);
   }
-      const instance = basicLightbox.create(`
-    <img src="assets/images/image.png" width="800" height="600">
-`);
-    
+  modal.show();
+  setTimeout(() => { modal.close(); }, 4000);
 }
-function addActiveCardClass(card) {
-  card.classList.add(`.is-active`);
-}
-console.log(galleryItems);
+
+
+
