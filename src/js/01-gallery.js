@@ -20,15 +20,10 @@ const cardsMarkup = cardListItem (galleryItems);
 listItem.addEventListener(`click`, onPaletteContainerClick);
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew); 
-function onPaletteContainerClick(evt) {
-  evt.preventDefaul();
-  for (let i = 0; i < galleryItems.length; i++) { }
-  if (evt.target.dataset.sourge === galleryItems[i].original) {
-    const modal = basicLightbox.create(`<img src='${galleryItems[i].original}' alt='${galleryItems[i].description}'/>`);
-  }
-  modal.show();
-  setTimeout(() => { modal.close(); }, 4000);
+function onPaletteContainerClick() {
+  const instance = basicLightbox.create(`
+    <img src='${galleryItems.original}',alt='${galleryItems.description} width="800" height="600">
+`)
+
+  instance.show()
 }
-
-
-
