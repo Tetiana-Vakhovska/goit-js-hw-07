@@ -20,10 +20,16 @@ const cardsMarkup = cardListItem (galleryItems);
 listItem.addEventListener(`click`, onPaletteContainerClick);
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew); 
-function onPaletteContainerClick() {
+function onPaletteContainerClick(evt) {
+  evt.taget.dataset.sourge;
   const instance = basicLightbox.create(`
     <img src='${galleryItems.original}',alt='${galleryItems.description} width="800" height="600">
 `)
 
   instance.show()
+}
+listItem.addEventListener(`click`, offPaletteContainerClick);
+function offPaletteContainerClick() {
+  evt.taget.dataset.source;
+  console.log(galleryItems);
 }
