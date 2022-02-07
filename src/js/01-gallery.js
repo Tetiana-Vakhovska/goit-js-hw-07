@@ -23,14 +23,10 @@ console.log(cardListItemNew);
 function onPaletteContainerClick(evt) {
   evt.preventDefault()
   const instance = basicLightbox.create(`
-    <img src="evt.target.dataset.source" width="800" height="600">
+    <img src="${evt.target.dataset.source}" width="800" height="600">
 
 `);
   instance.show();
 }
 
 
-//descendant.addEventListener("click", (evt) => {
- // evt.stopPropagation();
-  //alert("Descendant click handler");
-//});
