@@ -11,9 +11,14 @@ const cardListItemNew = galleryItems.map(cardListItem).join("");
 const cardsMarkup = cardListItem (galleryItems);
 listItem.addEventListener(`click`, onPaletteContainerClick);
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
-console.log(cardListItemNew); 
 function onPaletteContainerClick(evt) {
-    evt.preventDefault()
-   
+  evt.preventDefault()
+    let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: `alt`, captiondelay: 250,
+  captionPosition:bottom
+});
 }
- let instance= SimpleLightbox('.gallery',{captionsData:'alt', captionDelay:250});
+
+
+
+
