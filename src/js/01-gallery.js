@@ -1,17 +1,17 @@
 import { galleryItems } from './gallery-items.js';
+
 // Change code below this line
+
 console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
 const cardListItem = ({ original, preview, description }) => {
     return `<div class="gallery__item">
   <a class="gallery__link" href="${original}">
         <img
-        src="${ preview}",
-          alt="${description}",
           class="gallery__image"
-      src="small-image.jpg"
-      data-source="large-image.jpg"
-      alt="Image description"
+          src="${ preview}"
+        data-source="${original}"
+          alt="${description}"
         />
         </a>
 </div>`;};
@@ -21,15 +21,16 @@ listItem.addEventListener(`click`, onPaletteContainerClick);
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew); 
 function onPaletteContainerClick(evt) {
-  evt.taget.dataset.sourge;
+  evt.preventDefault()
   const instance = basicLightbox.create(`
-    <img src='${galleryItems.original}',alt='${galleryItems.description} width="800" height="600">
-`)
+    <img src="evt.target.dataset.source" width="800" height="600">
 
-  instance.show()
+`);
+  instance.show();
 }
-listItem.addEventListener(`click`, offPaletteContainerClick);
-function offPaletteContainerClick() {
-  evt.taget.dataset.source;
-  console.log(galleryItems);
-}
+
+
+//descendant.addEventListener("click", (evt) => {
+ // evt.stopPropagation();
+  //alert("Descendant click handler");
+//});
