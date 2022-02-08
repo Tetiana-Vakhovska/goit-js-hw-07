@@ -4,9 +4,9 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
 const cardListItem = ({ original, preview, description }) => {
-    return `<div class="gallery"><a class="gallery__item" data-lightbox="images" href="${original}"">
+    return `<a class="gallery__item" data-lightbox="images" href="${original}"">
   <img class="gallery__image" src="${ preview}" alt="${description}" />
-</a></div>`};
+</a>`};
 
 const cardListItemNew = galleryItems.map(cardListItem).join("");
 const cardsMarkup = cardListItem(galleryItems);
@@ -21,7 +21,7 @@ function onPaletteContainerClick(evt) {
 }
 
 
-let gallery = new SimpleLightbox('.gallery a', {
+let gallery = new SimpleLightbox('.lightbox', {
   captionsData: `alt`, captiondelay: 250,
   captionPosition:bottom
 });
