@@ -4,21 +4,25 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 const listItem = document.querySelector(".gallery");
 const cardListItem = ({ original, preview, description }) => {
-    return `<a class="gallery__item" href="${original}"">
+    return `<div class="gallery"><a class="gallery__item" data-lightbox="images" href="${original}"">
   <img class="gallery__image" src="${ preview}" alt="${description}" />
-</a>`};
+</a></div>`};
+
 const cardListItemNew = galleryItems.map(cardListItem).join("");
-const cardsMarkup = cardListItem (galleryItems);
+const cardsMarkup = cardListItem(galleryItems);
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+document.body.appendChild(lightbox);
 listItem.addEventListener(`click`, onPaletteContainerClick);
 listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 function onPaletteContainerClick(evt) {
   evt.preventDefault()
-    let gallery = new SimpleLightbox('.gallery a', {
-  captionsData: `alt`, captiondelay: 250,
-  captionPosition:bottom
-});
+    
 }
 
 
-
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: `alt`, captiondelay: 250,
+  captionPosition:bottom
+});
 
