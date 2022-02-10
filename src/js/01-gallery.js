@@ -22,11 +22,7 @@ listItem.insertAdjacentHTML("beforeend", cardListItemNew);
 console.log(cardListItemNew); 
 function onPaletteContainerClick(evt) {
   evt.preventDefault()
-  const instance = basicLightbox.create(`
-    <img src="${evt.target.dataset.source}" width="800" height="600">
 
-`);
-  instance.show();
 }
 
 
