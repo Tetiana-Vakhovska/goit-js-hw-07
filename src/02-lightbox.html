@@ -16,12 +16,21 @@
     <p><a href="index.html">Go back</a></p>
 
     <!-- Add gallery items to this list -->
-    <ul class="gallery"></ul>
+    <ul class="gallery">
+      <a data-lightbox="roadtrip" class="gallery__item" href="`${original}`">
+        <img
+          class="gallery__image"
+          src="`${"
+          preview}`
+          alt="`${description}`"
+        />
+      </a>
+    </ul>
 
     <script src="js/02-lightbox.js" type="module"></script>
     <script>
       src =
-        "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.2/simple-lightbox.min.js";
+        "https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.2/simple-lightbox.legacy.min.js";
     </script>
   </body>
 </html>
