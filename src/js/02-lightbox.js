@@ -19,13 +19,13 @@ function galleryItemCard (lightbox) {
   })
   .join('')
 }
-ref.galleryListHtml.insertAdjacentHTML('befforend', galleryItemCard(galleryItems));
+ref.galleryListHtml.insertAdjacentHTML('beforeend', galleryItemCard(galleryItems));
 function tupGalleryItemCard(e) {
   if (e.target.nodeName === 'IMG') {
     e.preventDefault()
     new SimpleLightbox('.gallery a', {
       captionsData: `alt`, captiondelay: 250,
-      captionPosition: bottom
+      
     });
 
   }
