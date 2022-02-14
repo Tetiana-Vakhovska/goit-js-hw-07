@@ -3,7 +3,7 @@ import { galleryItems } from './gallery-items.js';
 
 const ref = {
   galleryListHtml: document.querySelector('.gallery'),
-  galleryImageLigthBox:document.querySelector('body')
+  galleryImageLigthBox: document.querySelector('body')
 }
 ref.galleryImageLigthBox.addEventListener('clic', tupGalleryItemCard)
 function galleryItemCard (lightbox) {
@@ -24,7 +24,7 @@ function tupGalleryItemCard(e) {
   if (e.target.nodeName === 'IMG') {
     e.preventDefault()
     new SimpleLightbox('.gallery a', {
-      captionsData: `alt`, captiondelay: 250,
+      captionsData: 'alt', captiondelay: 250,
       
     });
 
